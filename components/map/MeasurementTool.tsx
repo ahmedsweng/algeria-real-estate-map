@@ -6,26 +6,18 @@ import { Layer, Source } from "react-map-gl/mapbox";
 
 interface MeasurementToolProps {
   isMeasuring: boolean;
-  setIsMeasuring: (value: boolean) => void;
   measurePoints: MeasurePoint[];
-  setMeasurePoints: (points: MeasurePoint[]) => void;
   measureDistance: number;
-  setMeasureDistance: (distance: number) => void;
-  handleMapClick: (e: any) => void;
-  resetMeasurement: () => void;
   currentMousePosition?: MeasurePoint | null;
+  resetMeasurement: () => void;
 }
 
 export function MeasurementTool({
   isMeasuring,
-  setIsMeasuring,
   measurePoints,
-  setMeasurePoints,
   measureDistance,
-  setMeasureDistance,
-  handleMapClick,
-  resetMeasurement,
   currentMousePosition,
+  resetMeasurement,
 }: MeasurementToolProps) {
   // Create GeoJSON for completed measurement lines
   const measurementLinesGeoJSON: MeasurementLineGeoJSON = {
